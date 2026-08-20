@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ellie (Lalaggi) — About Me</title>
+  <meta name="description" content="Ellie (Lalaggi) — student & hobbyist dev. GTK/Linux apps, CLI tools, and more." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Ellie <span class="handle">(Lalaggi)</span></h1>
+      <p class="pronouns">she/her</p>
+      <p class="tagline">Student &amp; hobbyist dev</p>
+      <p class="bio">
+        I build Linux desktop apps and small developer tools in my free time —
+        mostly GTK4/libadwaita apps, Rust/Vala CLIs, and the occasional browser
+        extension. Most of my work lives on GitLab.
+      </p>
+      <nav class="links" aria-label="Social links">
+        <a class="link-btn" href="https://gitlab.com/Lalaggi" target="_blank" rel="noopener">
+          <svg aria-hidden="true" role="img" width="19" height="18" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="m24.507 9.5-.034-.09L21.082.562a.896.896 0 0 0-1.694.091l-2.29 7.01H7.825L5.535.653a.898.898 0 0 0-1.694-.09L.451 9.411.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 2.56 1.935 1.554 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="currentColor"></path>
+            <path d="m24.507 9.5-.034-.09a11.44 11.44 0 0 0-4.56 2.051l-7.447 5.632 4.742 3.584 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="currentColor" opacity="0.7"></path>
+            <path d="m7.707 20.677 2.56 1.935 1.555 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935-4.743-3.584-4.755 3.584Z" fill="currentColor" opacity="0.85"></path>
+            <path d="M5.01 11.461a11.43 11.43 0 0 0-4.56-2.05L.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 4.745-3.584-7.444-5.632Z" fill="currentColor" opacity="0.55"></path>
+          </svg>
+          GitLab
+        </a>
+        <a class="link-btn" href="https://discord.com" target="_blank" rel="noopener">
+          <svg aria-hidden="true" role="img" width="20" height="15.5" viewBox="0 0 256 199" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M216.856 16.597A208.502 208.502 0 0 0 164.042 0c-2.275 4.113-4.933 9.645-6.766 14.046-19.692-2.961-39.203-2.961-58.533 0-1.832-4.4-4.55-9.933-6.846-14.046a207.809 207.809 0 0 0-52.855 16.638C5.618 67.147-3.443 116.4 1.087 164.956c22.169 16.555 43.653 26.612 64.775 33.193A161.094 161.094 0 0 0 79.735 175.3a136.413 136.413 0 0 1-21.846-10.632 108.636 108.636 0 0 0 5.356-4.237c42.122 19.702 87.89 19.702 129.51 0a131.66 131.66 0 0 0 5.355 4.237 136.07 136.07 0 0 1-21.886 10.653c4.006 8.02 8.638 15.67 13.873 22.848 21.142-6.58 42.646-16.637 64.815-33.213 5.316-56.288-9.08-105.09-38.056-148.36ZM85.474 135.095c-12.645 0-23.015-11.805-23.015-26.18s10.149-26.2 23.015-26.2c12.867 0 23.236 11.804 23.015 26.2.02 14.375-10.148 26.18-23.015 26.18Zm85.051 0c-12.645 0-23.014-11.805-23.014-26.18s10.148-26.2 23.014-26.2c12.867 0 23.236 11.804 23.015 26.2 0 14.375-10.148 26.18-23.015 26.18Z" fill="currentColor"></path>
+          </svg>
+          @lalaggi on Discord
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>
+        Hey, I'm Ellie — a student who likes to tinker. I spend a lot of my time
+        writing open-source software for the Linux desktop, with a soft spot for
+        clean GTK4/libadwaita interfaces and fast command-line utilities. I also
+        dabble in adblock filter lists, media tooling, and self-hosting.
+      </p>
+      <p>
+        Everything below is hosted on GitLab, where I do most of my coding.
+      </p>
+    </section>
+
+    <section class="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects on GitLab</h2>
+      <div class="grid" id="project-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with static HTML &amp; CSS · Hosted on Cloudflare Pages · © <span id="year"></span> Ellie (Lalaggi)</p>
+    <br>
+    <p>Proud Transgender Woman 🩵🩷🤍🩷🩵</p>
+  </footer>
+
+  <script>
+    const projects = [
+      { name: "312", url: "https://gitlab.com/Lalaggi/312", desc: "A script for encoding and decoding 312/Test Radio codes." },
+      { name: "ariagui", url: "https://gitlab.com/Lalaggi/ariagui", desc: "A lightweight GTK4/libadwaita GUI frontend for the aria2 download manager, written in Vala." },
+      { name: "dropship-filters", url: "https://gitlab.com/Lalaggi/dropship-filters", desc: "An adblock filter list that removes sketchy dropship retailers (Temu, Shein, AliExpress, and more) from search results and blocks their trackers." },
+      { name: "fasttest", url: "https://gitlab.com/Lalaggi/fasttest", desc: "A fast terminal-based internet speed test CLI written in Go, with a live TUI and JSON output." },
+      { name: "filebin", url: "https://gitlab.com/Lalaggi/filebin", desc: "A CLI tool to upload files to filebin.net, written in Rust." },
+      { name: "flatpak-repo", url: "https://gitlab.com/Lalaggi/flatpak-repo", desc: "A personal Flatpak repository hosting app builds." },
+      { name: "gitpkg", url: "https://gitlab.com/Lalaggi/gitpkg", desc: "A minimal Git-based package manager for GitHub, GitLab, and Codeberg that clones, builds, and symlinks executables." },
+      { name: "LuaPackage", url: "https://gitlab.com/Lalaggi/LuaPackage", desc: "A Lua bytecode compiler and packager that bundles Lua into a self-extracting C project." },
+      { name: "morphe-music", url: "https://gitlab.com/Lalaggi/morphe-music", desc: "Music app patches for Morphe (Amazon Music and more), including fixes for broken dex patches." },
+      { name: "semitone", url: "https://gitlab.com/Lalaggi/semitone", desc: "A lightweight GTK4/libadwaita music player written in Vala, with synced lyrics and ReplayGain." },
+      { name: "Streamline", url: "https://gitlab.com/Lalaggi/Streamline", desc: "A simple GTK4/libadwaita video transcoder written in Rust, powered by ffmpeg." },
+      { name: "TabRes", url: "https://gitlab.com/Lalaggi/TabRes", desc: "A Chrome/Chromium extension that automatically re-opens pinned tabs at their base URL when closed." },
+      { name: "Velox", url: "https://gitlab.com/Lalaggi/Velox", desc: "A GTK4/libadwaita media downloader written in Vala, with SponsorBlock and playlist support." },
+      { name: "WayClicker", url: "https://gitlab.com/Lalaggi/WayClicker", desc: "A Wayland auto-clicker with a GTK4/libadwaita GUI using the Linux uinput subsystem." },
+      { name: "ytm-sync", url: "https://gitlab.com/Lalaggi/ytm-sync", desc: "Sync your YouTube Music library to local Opus files, with embedded metadata and playlists." }
+    ];
+
+    const grid = document.getElementById("project-grid");
+    projects.forEach(p => {
+      const card = document.createElement("a");
+      card.className = "card";
+      card.href = p.url;
+      card.target = "_blank";
+      card.rel = "noopener";
+      card.innerHTML = `<h3>${p.name}</h3><p>${p.desc}</p><span class="card-link">View on GitLab →</span>`;
+      grid.appendChild(card);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
