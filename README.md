@@ -8,9 +8,9 @@ A static HTML/CSS About Me page showcasing my GitLab projects and tools, hosted 
 
 ## Features
 
-- **Intro** — name, pronouns, and short bio
-- **Projects grid** — auto-generated cards for all GitLab projects (from a single `projects` array in `index.html`)
-- **Static & fast** — no build step, just HTML + CSS, deployed to Cloudflare Pages
+- **Intro** - name, pronouns, and short bio
+- **Projects grid** - auto-generated cards for all GitLab projects (from a single `projects` array in `index.html`)
+- **Static & fast** - no build step, just HTML + CSS, deployed to Cloudflare Pages
 
 ## Structure
 
@@ -50,4 +50,4 @@ https://gitlab.com/Lalaggi/about-me-pages/-/issues
 
 ## License
 
-GPL-3.0 — see [LICENSE](LICENSE).
+GPL-3.0 - see [LICENSE](LICENSE).

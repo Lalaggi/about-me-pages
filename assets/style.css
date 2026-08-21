@@ -1,5 +1,5 @@
 :root {
-  /* Material 3 Expressive — dark theme, purple seed */
+  /* Material 3 Expressive - dark theme, purple seed */
   --background: #161318;
   --surface: #1e1b22;
   --surface-container: #262229;
@@ -128,9 +128,14 @@ body {
   filter: brightness(1.08);
 }
 
-.link-btn svg {
+.link-btn svg,
+.link-btn .link-icon {
   color: var(--on-secondary-container);
   opacity: 0.9;
+}
+
+.link-btn .link-icon {
+  display: block;
 }
 
 /* Main */
@@ -165,6 +170,7 @@ h2 {
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -198,6 +204,15 @@ h2 {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--primary);
+}
+
+.card-star {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
 }
 
 /* Footer */
