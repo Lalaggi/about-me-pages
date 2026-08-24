@@ -215,6 +215,27 @@ h2 {
   opacity: 0.9;
 }
 
+.card-icons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  display: block;
+}
+
+.card.archived,
+.card.paused {
+  opacity: 0.92;
+}
+
 /* Footer */
 footer {
   border-top: 1px solid var(--outline);

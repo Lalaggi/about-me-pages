@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ellie (Lalaggi) - About Me</title>
   <meta name="description" content="Ellie (Lalaggi) - student & hobbyist dev. GTK/Linux apps, CLI tools, and more." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -15,8 +18,8 @@
       <p class="tagline">Student &amp; hobbyist dev</p>
       <p class="bio">
         I build Linux desktop apps and small developer tools in my free time -
-        mostly GTK4/libadwaita apps, Rust/Vala CLIs, and the occasional browser
-        extension. Most of my work lives on GitLab.
+        mostly GTK4/libadwaita apps, or CLIs written in Rust, Vala, and Go, as well as the occasional browser extensio or minecraft mod. 
+        You can find my stuff on github
       </p>
       <nav class="links" aria-label="Social links">
         <a class="link-btn" href="https://gitlab.com/Lalaggi" target="_blank" rel="noopener">
@@ -35,7 +38,7 @@
     <section class="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About Me</h2>
       <p>
-        Hey, I'm Ellie - a student who likes to tinker. I spend a lot of my time
+        Hey, I'm Ellie - a student who likes to code. I spend a lot of my time
         writing open-source software for the Linux desktop, with a soft spot for
         clean GTK4/libadwaita interfaces and fast command-line utilities. I also
         dabble in adblock filter lists, media tooling, and self-hosting.
@@ -67,14 +70,14 @@
       { name: "filebin", url: "https://gitlab.com/Lalaggi/filebin", desc: "A CLI tool to upload files to filebin.net, written in Rust." },
       { name: "flatpak-repo", url: "https://gitlab.com/Lalaggi/flatpak-repo", desc: "A personal Flatpak repository hosting app builds." },
       { name: "gitpkg", url: "https://gitlab.com/Lalaggi/gitpkg", desc: "A minimal Git-based package manager for GitHub, GitLab, and Codeberg that clones, builds, and symlinks executables.", flagship: true },
-      { name: "LuaPackage", url: "https://gitlab.com/Lalaggi/LuaPackage", desc: "A Lua bytecode compiler and packager that bundles Lua into a self-extracting C project." },
+      { name: "LuaPackage", url: "https://gitlab.com/Lalaggi/LuaPackage", desc: "A Lua bytecode compiler and packager that bundles Lua into a self-extracting C project.", archived: true },
       { name: "morphe-music", url: "https://gitlab.com/Lalaggi/morphe-music", desc: "Music app patches for Morphe (Amazon Music and more), including fixes for broken dex patches." },
       { name: "semitone", url: "https://gitlab.com/Lalaggi/semitone", desc: "A lightweight GTK4/libadwaita music player written in Vala, with synced lyrics and ReplayGain.", flagship: true },
       { name: "Streamline", url: "https://gitlab.com/Lalaggi/Streamline", desc: "A simple GTK4/libadwaita video transcoder written in Rust, powered by ffmpeg." },
-      { name: "TabRes", url: "https://gitlab.com/Lalaggi/TabRes", desc: "A Chrome/Chromium extension that automatically re-opens pinned tabs at their base URL when closed." },
+      { name: "TabRes", url: "https://gitlab.com/Lalaggi/TabRes", desc: "A Chrome/Chromium extension that automatically re-opens pinned tabs at their base URL when closed.", archived: true },
       { name: "Velox", url: "https://gitlab.com/Lalaggi/Velox", desc: "A GTK4/libadwaita media downloader written in Vala, with SponsorBlock and playlist support.", flagship: true },
       { name: "warpMC", url: "https://gitlab.com/Lalaggi/warpMC", desc: "A fast Purpur fork for Minecraft 26.1.2 with faster world generation, lower memory usage, and server-side Fake Players for AFK/bots.", flagship: true },
-      { name: "WarpAFK", url: "https://gitlab.com/Lalaggi/warp-afk", desc: "A Paper plugin for WarpMC that lets you log out and leave a bot in your place to stay AFK, with timeout and auto-restore after restarts." },
+      { name: "WarpAFK", url: "https://gitlab.com/Lalaggi/warp-afk", desc: "A Paper plugin for WarpMC that lets you log out and leave a bot in your place to stay AFK, with timeout and auto-restore after restarts.", paused: true },
       { name: "WayClicker", url: "https://gitlab.com/Lalaggi/WayClicker", desc: "A Wayland auto-clicker with a GTK4/libadwaita GUI using the Linux uinput subsystem." },
       { name: "ytm-sync", url: "https://gitlab.com/Lalaggi/ytm-sync", desc: "Sync your YouTube Music library to local Opus files, with embedded metadata and playlists." }
     ];
@@ -82,12 +85,16 @@
     const grid = document.getElementById("project-grid");
     projects.forEach(p => {
       const card = document.createElement("a");
-      card.className = "card";
+      card.className = "card" + (p.archived ? " archived" : "") + (p.paused ? " paused" : "");
       card.href = p.url;
       card.target = "_blank";
       card.rel = "noopener";
-      const star = p.flagship ? `<img class="card-star" src="assets/star.svg" alt="Flagship project" />` : "";
-      card.innerHTML = `${star}<h3>${p.name}</h3><p>${p.desc}</p><span class="card-link">View on GitLab →</span>`;
+      const icons = [];
+      if (p.flagship) icons.push(`<img class="card-icon" src="assets/star.svg" alt="Featured" title="Featured project" />`);
+      if (p.archived) icons.push(`<img class="card-icon" src="assets/archive.svg" alt="Archived" title="Archived — unmaintained, kept for reference" />`);
+      if (p.paused) icons.push(`<img class="card-icon" src="assets/pause.svg" alt="Paused" title="Paused — on break, will continue later" />`);
+      const iconsHtml = icons.length ? `<span class="card-icons">${icons.join("")}</span>` : "";
+      card.innerHTML = `${iconsHtml}<h3>${p.name}</h3><p>${p.desc}</p><span class="card-link">View on GitLab →</span>`;
       grid.appendChild(card);
     });
 
